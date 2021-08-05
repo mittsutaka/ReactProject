@@ -15,17 +15,17 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\src\components\templates\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\src\components\templates\**" />
+    <EmbeddedResource Remove="ClientApp\src\components\templates\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="ClientApp\src\components\templates\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\components\pages\" />
-    <Folder Include="ClientApp\src\components\templates\" />
-    <Folder Include="ClientApp\src\components\organisms\" />
-    <Folder Include="ClientApp\src\components\molcules\" />
-    <Folder Include="ClientApp\src\components\atoms\" />
+    <Folder Include="ClientApp\src\components\atoms\inputs\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

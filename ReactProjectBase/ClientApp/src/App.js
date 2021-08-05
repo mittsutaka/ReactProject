@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router';
-import { Layout } from './components/Layout';
+import React from 'react';
+import { Route } from 'react-router-dom';
 import { Home } from './components/Home';
+import Flow from './components/pages/flow/Index';
 
 export const App = () => {
     return (
-        <Layout>
-            <Route exact path='/' component={Home} />
-        </Layout>
+        <>
+            <Route exact path='/' component={Flow} />
+            <Route path='/count' component={Home} />
+        </>
     );
 }
